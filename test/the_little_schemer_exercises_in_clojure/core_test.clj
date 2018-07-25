@@ -3,3 +3,4 @@
             [the-little-schemer-exercises-in-clojure.core :refer :all]))
 
 (load "chapter01_test")
+(load "chapter02_test")

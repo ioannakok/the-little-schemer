@@ -2,3 +2,4 @@
   (:gen-class))
 
 (load "chapter01")
+(load "chapter02")
