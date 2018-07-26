@@ -6,8 +6,7 @@
     true
     (if (atom? (first l))
       (lat? (rest l))
-      false
-      )))
+      false)))
 
 (defn member? [a lat]
   (if (empty? lat)

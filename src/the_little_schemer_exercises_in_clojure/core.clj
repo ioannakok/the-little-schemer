@@ -3,3 +3,5 @@
 
 (load "chapter01")
 (load "chapter02")
+(load "chapter03")
+
