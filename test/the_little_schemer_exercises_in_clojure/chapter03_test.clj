@@ -2,38 +2,38 @@
 
 
 (deftest rember-test
-  (testing "Rember removes an element from a list"
-    (is (= (rember 'bacon '(bacon lettuce and tomato))
-           '(lettuce and tomato)))
-    (is (= (rember 'and '(bacon lettuce and tomato))
-           '(bacon lettuce tomato)))
-    (is (= (rember 'hi '(hi)) '()))
-    (is (= (rember 'hi '()) '()))))
+  (testing "Rember removes the first occurrence of an element from a list"
+    (are [a lat expected]
+      (= (rember a lat) expected)
+      'mint '(lamb chops and mint jelly) '(lamb chops and jelly)
+      'mint '(lamb chops and mint flavored mint jelly) '(lamb chops and flavored mint jelly)
+      'toast '(bacon lettuce and tomato) '(bacon lettuce and tomato)
+      'cup '(coffee cup tea cup and hick cup) '(coffee tea cup and hick cup)
+      'x' '() '())))
 
 
 (deftest firsts-test
   (testing "Firsts builds a list with all the first
   elements of each internal list in the lat"
-    (is (= (firsts '((apple peach pumpkin)
-                      (plum pear cherry)
-                      (grape raisin pea)
-                      (bean carrot eggplant)))
-           '(apple plum grape bean)))
-    (is (= (firsts '((a b) (c d) (e f))) '(a c e)))
-    (is (= (firsts '()) '()))
-    (is (= (firsts '(((five plums) four)
-                       (eleven green oranges)
-                       ((no) more)))
-           '((five plums) eleven (no))))))
+    (are [l expected]
+      (= (firsts l) expected)
+      '((apple peach pumpkin)
+         (plum pear cherry)
+         (grape raisin pea)
+         (bean carrot eggplant)) '(apple plum grape bean)
+      '((a b) (c d) (e f)) '(a c e)
+      '() '()
+      '(((five plums) four)
+         (eleven green oranges)
+         ((no) more)) '((five plums) eleven (no)))))
 
 
 (deftest insertR-test
-  (testing "Returns empty list if lat is empty"
-    (is (insertR 'x 'y '()) '()))
-  (testing "Inserts the new element on the right of old
-  element in the list"
+  (testing "Inserts the new element on the right of the first occurrence
+  of the old element in the list"
     (are [new old lat expected]
       (= (insertR new old lat) expected)
+      'x 'y '() '()
       'topping 'fudge '(ice cream with fudge for dessert) '(ice cream with fudge topping for dessert)
       'jalapeno 'and '(tacos tamales and salsa) '(tacos tamales and jalapeno salsa)
       'e 'd '(a b c d f g d h) '(a b c d e f g d h))))
