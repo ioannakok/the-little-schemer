@@ -8,3 +8,9 @@
       (lat? (rest l))
       false
       )))
+
+(defn member? [a lat]
+  (if (empty? lat)
+    false
+    (or (= (first lat) a)
+        (recur a (rest lat)))))
