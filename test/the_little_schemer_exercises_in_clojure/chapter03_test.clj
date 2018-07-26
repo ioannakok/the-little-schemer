@@ -37,3 +37,14 @@
       'topping 'fudge '(ice cream with fudge for dessert) '(ice cream with fudge topping for dessert)
       'jalapeno 'and '(tacos tamales and salsa) '(tacos tamales and jalapeno salsa)
       'e 'd '(a b c d f g d h) '(a b c d e f g d h))))
+
+
+(deftest insertL-test
+  (testing "Inserts the new element on the left of the first occurrence
+  of the old element in the list"
+    (are [new old lat expected]
+      (= (insertL new old lat) expected)
+      'x 'y '() '()
+      'topping 'fudge '(ice cream with fudge for dessert) '(ice cream with topping fudge for dessert)
+      'jalapeno 'and '(tacos tamales and salsa) '(tacos tamales jalapeno and salsa)
+      'e 'd '(a b c d f g d h) '(a b c e d f g d h))))

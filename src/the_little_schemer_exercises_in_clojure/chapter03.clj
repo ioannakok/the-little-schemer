@@ -20,3 +20,13 @@
     (= (first lat) old) (cons old (cons new (rest lat)))
     :else (cons (first lat) (insertR new old (rest lat)))))
 
+
+(defn insertL [new old lat]
+  (cond
+    (empty? lat) '()
+    (= (first lat) old) (cons new lat)
+    :else (cons (first lat) (insertL new old (rest lat)))))
+
+
+
+
