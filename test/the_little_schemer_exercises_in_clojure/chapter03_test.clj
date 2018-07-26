@@ -13,7 +13,7 @@
 
 (deftest firsts-test
   (testing "Firsts builds a list with all the first
-  elements of each internal list"
+  elements of each internal list in the lat"
     (is (= (firsts '((apple peach pumpkin)
                       (plum pear cherry)
                       (grape raisin pea)
@@ -25,3 +25,15 @@
                        (eleven green oranges)
                        ((no) more)))
            '((five plums) eleven (no))))))
+
+
+(deftest insertR-test
+  (testing "Returns empty list if lat is empty"
+    (is (insertR 'x 'y '()) '()))
+  (testing "Inserts the new element on the right of old
+  element in the list"
+    (are [new old lat expected]
+      (= (insertR new old lat) expected)
+      'topping 'fudge '(ice cream with fudge for dessert) '(ice cream with fudge topping for dessert)
+      'jalapeno 'and '(tacos tamales and salsa) '(tacos tamales and jalapeno salsa)
+      'e 'd '(a b c d f g d h) '(a b c d e f g d h))))
