@@ -9,3 +9,19 @@
            '(bacon lettuce tomato)))
     (is (= (rember 'hi '(hi)) '()))
     (is (= (rember 'hi '()) '()))))
+
+
+(deftest firsts-test
+  (testing "Firsts builds a list with all the first
+  elements of each internal list"
+    (is (= (firsts '((apple peach pumpkin)
+                      (plum pear cherry)
+                      (grape raisin pea)
+                      (bean carrot eggplant)))
+           '(apple plum grape bean)))
+    (is (= (firsts '((a b) (c d) (e f))) '(a c e)))
+    (is (= (firsts '()) '()))
+    (is (= (firsts '(((five plums) four)
+                       (eleven green oranges)
+                       ((no) more)))
+           '((five plums) eleven (no))))))

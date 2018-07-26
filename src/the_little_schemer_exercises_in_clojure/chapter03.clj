@@ -8,6 +8,10 @@
     :else (cons (first lat) (rember a (rest lat)))))
 
 
+(defn firsts [l]
+  (cond
+    (empty? l) l
+    :else (cons (first (first l)) (firsts (rest l)))))
 
 
 
