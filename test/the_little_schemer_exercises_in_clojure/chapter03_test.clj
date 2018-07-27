@@ -79,3 +79,9 @@
   (testing "New is inserted on the left of all occurrences of old"
     (is (= (multiinsertL 'fried 'fish '(chips and fish or fish and fried)))
         '(chips and fried fish or fried fish and fried))))
+
+
+(deftest multisubst-test
+  (testing "All occurrences of old are replaced by new"
+    (is (= (multisubst 'fried 'fish '(chips and fish or fish and fried)))
+        '(chips and fried fish or fried fish and fried))))

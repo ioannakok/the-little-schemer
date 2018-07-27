@@ -90,3 +90,12 @@
                 (multiinsertL new old (rest lat)))))
 
 
+(defn multisubst [new old lat]
+  (cond
+    (empty? lat) '()
+    (= (first lat) old)
+      (cons new (multisubst new old (rest lat)))
+    :else (cons (first lat)
+                (multisubst new old (rest lat)))))
+
+
