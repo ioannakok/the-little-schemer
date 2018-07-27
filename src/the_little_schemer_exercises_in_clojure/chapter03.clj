@@ -28,5 +28,12 @@
     :else (cons (first lat) (insertL new old (rest lat)))))
 
 
+(defn subst [new old lat]
+  (cond
+    (empty? lat) '()
+    (= (first lat) old) (cons new (rest lat))
+    :else (cons (first lat) (subst new old (rest lat)))))
+
+
 
 
