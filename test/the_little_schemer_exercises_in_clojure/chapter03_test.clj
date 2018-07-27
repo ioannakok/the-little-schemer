@@ -61,3 +61,9 @@
     (is (= (subst2 'vanilla 'chocolate 'banana
                    '(banana ice cream with chocolate topping)))
         '(vanilla ice cream with chocolate topping))))
+
+
+(deftest multirember-test
+  (testing "All occurrences of a are removed from lat"
+    (is (= (multirember 'cup '(coffee cup tea cup and hick cup))
+           '(coffee tea and hick)))))

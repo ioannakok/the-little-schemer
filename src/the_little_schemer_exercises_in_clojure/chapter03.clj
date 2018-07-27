@@ -42,3 +42,8 @@
     :else (cons (first lat) (subst2 new o1 o2 (rest lat)))))
 
 
+(defn multirember [a l]
+  (cond
+    (empty? l) '()
+    (= (first l) a) (multirember a (rest l))
+    :else (cons (first l) (multirember a (rest l)))))
