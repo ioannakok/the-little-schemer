@@ -67,3 +67,8 @@
   (testing "All occurrences of a are removed from lat"
     (is (= (multirember 'cup '(coffee cup tea cup and hick cup))
            '(coffee tea and hick)))))
+
+(deftest multiinsertR-test
+  (testing "New is inserted on the right of all occurrences of old"
+    (is (= (multiinsertR 'fried 'fish '(chips and fish or fish and fried)))
+        '(chips and fish fried or fish fried and fried))))
