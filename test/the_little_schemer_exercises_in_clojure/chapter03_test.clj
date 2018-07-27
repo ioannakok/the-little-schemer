@@ -68,7 +68,14 @@
     (is (= (multirember 'cup '(coffee cup tea cup and hick cup))
            '(coffee tea and hick)))))
 
+
 (deftest multiinsertR-test
   (testing "New is inserted on the right of all occurrences of old"
     (is (= (multiinsertR 'fried 'fish '(chips and fish or fish and fried)))
         '(chips and fish fried or fish fried and fried))))
+
+
+(deftest multiinsertL-test
+  (testing "New is inserted on the left of all occurrences of old"
+    (is (= (multiinsertL 'fried 'fish '(chips and fish or fish and fried)))
+        '(chips and fried fish or fried fish and fried))))

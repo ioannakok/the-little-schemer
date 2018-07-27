@@ -78,3 +78,15 @@
             (cons new (multiinsertR new old (rest lat))))
     :else (cons (first lat)
                 (multiinsertR new old (rest lat)))))
+
+
+(defn multiinsertL [new old lat]
+  (cond
+    (empty? lat) '()
+    (= (first lat) old)
+      (cons new (cons old
+                      (multiinsertL new old (rest lat))))
+    :else (cons (first lat)
+                (multiinsertL new old (rest lat)))))
+
+
