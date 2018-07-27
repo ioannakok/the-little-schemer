@@ -50,6 +50,14 @@
       'e 'd '(a b c d f g d h) '(a b c e d f g d h))))
 
 (deftest subst-test
-  (testing "Substitutes old with new in a list"
+  (testing "Replaces old with new in a list"
     (is (= (subst 'topping 'fudge '(ice cream with fudge for dessert))
            '(ice cream with topping for dessert)))))
+
+
+(deftest subst2-test
+  (testing "Replaces either the first occurrence of o1 or
+  the first occurrence of o2 by new"
+    (is (= (subst2 'vanilla 'chocolate 'banana
+                   '(banana ice cream with chocolate topping)))
+        '(vanilla ice cream with chocolate topping))))

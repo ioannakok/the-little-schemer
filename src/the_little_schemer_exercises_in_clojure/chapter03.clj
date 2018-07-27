@@ -35,5 +35,10 @@
     :else (cons (first lat) (subst new old (rest lat)))))
 
 
+(defn subst2 [new o1 o2 lat]
+  (cond
+    (empty? lat) '()
+    (or (= (first lat) o1) (= (first lat) o2)) (cons new (rest lat))
+    :else (cons (first lat) (subst2 new o1 o2 (rest lat)))))
 
 
