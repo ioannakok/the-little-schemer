@@ -68,6 +68,10 @@
     :else (inc (division (- a b) b))))
 
 
+(defn length [lat]
+  (cond
+    (empty? lat) 0
+    :else (inc (length (rest lat)))))
 
 
 

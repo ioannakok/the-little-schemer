@@ -88,3 +88,14 @@
       15 4 3
       15 3 5
       1 1 1)))
+
+(deftest length-test
+  (testing "Length of a sequence"
+    (are [lat expected]
+      (= (length lat) expected)
+      '(1 2 3 4) 4
+      [3 6 1] 3
+      '() 0
+      #{1 5 3 8 9} 5
+      {:a 1 :b 2} 2
+      )))
