@@ -32,3 +32,15 @@
       5 3 15
       13 4 52
       12 3 36)))
+
+
+(deftest list+-test
+  (testing "It builds a new list with by adding the respective
+  elements of the two lists"
+    (are [list1 list2 expected]
+      (= (list+ list1 list2) expected)
+      '(3 6 9 11 4) '(8 5 2 0 7) '(11 11 11 11 11)
+      '(2 3) '(4 6) '(6 9)
+      '(3 7) '(4 6) '(7 13)
+      '(3 7) '(4 6 8 1) '(7 13 8 1)
+      '(3 7 8 1) '(4 6) '(7 13 8 1))))

@@ -26,3 +26,11 @@
     0
     (add b (multiply (dec a) b))))
 
+
+(defn list+ [list1 list2]
+  (cond
+    (empty? list1) list2
+    (empty? list2) list1
+    :else (cons (add (first list1) (first list2))
+                (list+ (rest list1) (rest list2)))))
+
