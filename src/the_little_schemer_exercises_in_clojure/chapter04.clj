@@ -87,6 +87,14 @@
                 (rempick (dec n) (rest lat)))))
 
 
+(defn no-nums [lat]
+  (cond
+    (empty? lat) '()
+    :else (cond
+            (number? (first lat)) (no-nums (rest lat))
+            :else (cons (first lat)
+                        (no-nums (rest lat))))))
+
 
 
 

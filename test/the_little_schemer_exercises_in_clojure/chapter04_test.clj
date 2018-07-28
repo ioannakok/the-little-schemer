@@ -112,3 +112,13 @@
       (= (rempick n lat) expected)
       3 '(hotdogs with hot mustard) '(hotdogs with mustard)
       1 '(a) '())))
+
+
+(deftest no-nums-test
+  (testing "Returns a lat without any numbers"
+    (are [lat expected]
+      (= (no-nums lat) expected)
+      '(5 pears 6 prunes 9 dates) '(pears prunes dates)
+      '() '()
+      '(1 2 3) '()
+      '(one two three) '(one two three))))
