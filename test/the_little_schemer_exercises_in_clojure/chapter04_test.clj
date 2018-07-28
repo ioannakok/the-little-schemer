@@ -62,3 +62,12 @@
       2 3 true
       3 3 false
       4 3 false)))
+
+
+(deftest equal-test
+  (testing "Checks if two numbers are equal"
+    (are [a b expected]
+      (= (equal? a b) expected)
+      3 3 true
+      4 3 false
+      3 4 false)))

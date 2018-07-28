@@ -47,3 +47,13 @@
     (zero? b) false
     (zero? a) true
     :else (recur (dec a) (dec b))))
+
+
+(defn equal? [a b]
+  (cond
+    (greater-than a b) false
+    (less-than a b) false
+    :else true))
+
+
+
