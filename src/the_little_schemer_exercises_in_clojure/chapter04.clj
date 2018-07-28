@@ -34,3 +34,9 @@
     :else (cons (add (first list1) (first list2))
                 (list+ (rest list1) (rest list2)))))
 
+
+(defn greater-than [a b]
+  (cond
+    (zero? a) false
+    (zero? b) true
+    :else (recur (dec a) (dec b))))

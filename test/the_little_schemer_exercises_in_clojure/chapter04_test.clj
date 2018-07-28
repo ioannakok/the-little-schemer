@@ -44,3 +44,12 @@
       '(3 7) '(4 6) '(7 13)
       '(3 7) '(4 6 8 1) '(7 13 8 1)
       '(3 7 8 1) '(4 6) '(7 13 8 1))))
+
+
+(deftest greater-than-test
+  (testing "Checks if the first argument is greater than the second"
+    (are [a b expected]
+      (= (greater-than a b) expected)
+      5 5 false
+      6 5 true
+      6 7 false)))
