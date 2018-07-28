@@ -104,6 +104,16 @@
             :else (all-nums (rest lat)))))
 
 
+(defn occur [a lat]
+  (loop [a a
+         lat lat
+         acc 0]
+    (if (empty? lat)
+      acc
+      (if (= a (first lat))
+        (recur a (rest lat) (inc acc))
+        (recur a (rest lat) acc)))))
+
 
 
 

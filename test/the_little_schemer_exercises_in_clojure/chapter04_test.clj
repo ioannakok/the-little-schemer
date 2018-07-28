@@ -131,5 +131,14 @@
       '(5 pears 6 prunes 9 dates) '(5 6 9)
       '(pears prunes dates) '()
       '(1 2 3) '(1 2 3)
-      '() '()
-      )))
+      '() '())))
+
+
+(deftest occur-test
+  (testing "Counts how many times a occurs in lat"
+    (are [a lat  expected]
+      (= (occur a lat) expected)
+      'pink '(yellow pink blue green pink) 2
+      'pink '(yellow blue green) 0
+      'pink '(pink) 1
+      'pink '() 0)))
