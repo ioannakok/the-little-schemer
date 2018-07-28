@@ -97,5 +97,9 @@
       [3 6 1] 3
       '() 0
       #{1 5 3 8 9} 5
-      {:a 1 :b 2} 2
-      )))
+      {:a 1 :b 2} 2)))
+
+(deftest pick-test
+  (testing "Returns the nth element"
+    (is (= (pick 4 '(lasagna spaghetti ravioli macaroni meatball))
+           'macaroni))))

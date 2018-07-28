@@ -74,4 +74,13 @@
     :else (inc (length (rest lat)))))
 
 
+(defn pick [n lat]
+  (cond
+    (zero? (dec n)) (first lat)
+    :else (pick (dec n) (rest lat))))
+
+
+
+
+
 
