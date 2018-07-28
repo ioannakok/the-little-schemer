@@ -80,3 +80,11 @@
       1 1 1
       2 3 8
       5 3 125)))
+
+(deftest division-test
+  (testing "Division"
+    (are [a b expected]
+      (= (division a b) expected)
+      15 4 3
+      15 3 5
+      1 1 1)))

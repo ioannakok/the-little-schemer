@@ -62,4 +62,12 @@
     :else (multiply a (power a (dec b)))))
 
 
+(defn division [a b]
+  (cond
+    (less-than a b) 0
+    :else (inc (division (- a b) b))))
+
+
+
+
 
