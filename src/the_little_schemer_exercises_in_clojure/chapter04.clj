@@ -56,4 +56,10 @@
     :else true))
 
 
+(defn power [a b]
+  (cond
+    (zero? b) 1
+    :else (multiply a (power a (dec b)))))
+
+
 

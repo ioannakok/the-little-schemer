@@ -71,3 +71,12 @@
       3 3 true
       4 3 false
       3 4 false)))
+
+
+(deftest power-test
+  (testing "Raises a to the power of b"
+    (are [a b expected]
+      (= (power a b) expected)
+      1 1 1
+      2 3 8
+      5 3 125)))
