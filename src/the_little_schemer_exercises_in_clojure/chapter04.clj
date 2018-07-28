@@ -4,3 +4,9 @@
   (if (zero? a)
     b
     (recur (dec a) (inc b))))
+
+
+(defn sub [a b]
+  (if (zero? b)
+    a
+    (recur (dec a) (dec b))))
