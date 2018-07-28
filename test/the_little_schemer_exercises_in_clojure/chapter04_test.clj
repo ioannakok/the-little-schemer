@@ -101,5 +101,14 @@
 
 (deftest pick-test
   (testing "Returns the nth element"
-    (is (= (pick 4 '(lasagna spaghetti ravioli macaroni meatball))
-           'macaroni))))
+    (are [n lat expected]
+      (= (pick n lat) expected)
+      4 '(lasagna spaghetti ravioli macaroni meatball) 'macaroni
+      1 '(a) 'a)))
+
+(deftest rempick-test
+  (testing "Removes the nth element"
+    (are [n lat expected]
+      (= (rempick n lat) expected)
+      3 '(hotdogs with hot mustard) '(hotdogs with mustard)
+      1 '(a) '())))

@@ -80,6 +80,13 @@
     :else (pick (dec n) (rest lat))))
 
 
+(defn rempick [n lat]
+  (cond
+    (zero? (dec n)) (rest lat)
+    :else (cons (first lat)
+                (rempick (dec n) (rest lat)))))
+
+
 
 
 
