@@ -95,6 +95,14 @@
             :else (cons (first lat)
                         (no-nums (rest lat))))))
 
+(defn all-nums [lat]
+  (cond
+    (empty? lat) '()
+    :else (cond
+            (number? (first lat))
+              (cons (first lat) (all-nums (rest lat)))
+            :else (all-nums (rest lat)))))
+
 
 
 

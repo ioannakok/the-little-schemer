@@ -122,3 +122,14 @@
       '() '()
       '(1 2 3) '()
       '(one two three) '(one two three))))
+
+
+(deftest all-nums-test
+  (testing "Returns a lat with numbers"
+    (are [lat expected]
+      (= (all-nums lat) expected)
+      '(5 pears 6 prunes 9 dates) '(5 6 9)
+      '(pears prunes dates) '()
+      '(1 2 3) '(1 2 3)
+      '() '()
+      )))
