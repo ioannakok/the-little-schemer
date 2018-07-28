@@ -53,3 +53,12 @@
       5 5 false
       6 5 true
       6 7 false)))
+
+
+(deftest less-than-test
+  (testing "Checks if the first argument is less than the second"
+    (are [a b expected]
+      (= (less-than a b) expected)
+      2 3 true
+      3 3 false
+      4 3 false)))

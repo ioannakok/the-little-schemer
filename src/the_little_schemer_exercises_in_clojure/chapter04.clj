@@ -40,3 +40,10 @@
     (zero? a) false
     (zero? b) true
     :else (recur (dec a) (dec b))))
+
+
+(defn less-than [a b]
+  (cond
+    (zero? b) false
+    (zero? a) true
+    :else (recur (dec a) (dec b))))
