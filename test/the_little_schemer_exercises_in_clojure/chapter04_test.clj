@@ -142,3 +142,18 @@
       'pink '(yellow blue green) 0
       'pink '(pink) 1
       'pink '() 0)))
+
+
+(deftest one?-test
+  (testing "Returns true if n is 1, false otherwise"
+    (are [n expected]
+      (= (one? n) expected)
+      1 true
+      2 false)))
+
+(deftest rempick-new-test
+  (testing "Removes a from lat"
+    (are [a lat expected]
+      (= (rempick-new a lat) expected)
+      3 '(lemon meringue salty pie) '(lemon meringue pie)
+      1 '(a) '())))

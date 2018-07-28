@@ -115,5 +115,15 @@
         (recur a (rest lat) acc)))))
 
 
+(defn one? [n]
+  (= n 1))
+
+(defn rempick-new [n lat]
+  (cond
+    (one? n) (rest lat)
+    :else (cons (first lat)
+                (rempick (dec n) (rest lat)))))
+
+
 
 
