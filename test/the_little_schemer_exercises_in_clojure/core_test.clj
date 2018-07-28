@@ -5,3 +5,4 @@
 (load "chapter01_test")
 (load "chapter02_test")
 (load "chapter03_test")
+(load "chapter04_test")
