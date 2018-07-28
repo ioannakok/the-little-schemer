@@ -21,5 +21,8 @@
       (recur (rest list) (+ (first list) acc)))))
 
 
-
+(defn multiply [a b]
+  (if (zero? a)
+    0
+    (add b (multiply (dec a) b))))
 

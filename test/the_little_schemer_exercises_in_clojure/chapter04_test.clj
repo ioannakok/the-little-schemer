@@ -23,3 +23,12 @@
       '() 0
       '(3 5 2 8) 18
       '(15 6 7 12 3) 43)))
+
+
+(deftest multiply-test
+  (testing "Multiplication"
+    (are [a b expected]
+      (= (multiply a b) expected)
+      5 3 15
+      13 4 52
+      12 3 36)))
