@@ -151,6 +151,7 @@
       1 true
       2 false)))
 
+
 (deftest rempick-new-test
   (testing "Removes a from lat"
     (are [a lat expected]
